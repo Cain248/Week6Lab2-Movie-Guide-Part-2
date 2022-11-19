@@ -38,3 +38,29 @@ def display_menu():
     print()
     print("COMMAND MENU")
     print("list - List all movies")
+    print("add - Add a movie")
+    print("del - Delete a movie")
+    print("exit - Exit program")
+    print()
+
+def main():
+    display_menu()
+    movies = read_movies()
+    while True:
+        command = input("Command: ")
+        if command.lower() == "list":
+            list_movies(movies)
+        elif command.lower() == "add":
+            add_movie(movies)
+        elif command.lower() == "del":
+            delete_movie(movies)
+        elif command.lower() == "exit":
+            print("Bye!")
+            break
+        else:
+            print("Not a valid command. Please try again.")
+
+if __name__ == "__main__":
+    main()
+
+
